@@ -1,60 +1,108 @@
 'use client';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Award, Briefcase, Globe, Users } from 'lucide-react';
+import { CheckCircle2, Award, Briefcase, Globe, Users, TrendingUp } from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
 
 const AboutSection = () => {
     const stats = [
-        { label: "ISO Certified", value: "9001:2015", icon: Award },
-        { label: "MSME Type", value: "Micro", icon: Briefcase },
-        { label: "Global Reach", value: "Exports", icon: Globe },
-        { label: "Skills Impact", value: "1000+", icon: Users },
+        { label: "ISO Certified", value: "9001:2015", icon: Award, color: "text-accent" },
+        { label: "MSME Group", value: "Micro", icon: Briefcase, color: "text-primary" },
+        { label: "Trade Footprint", value: "Global", icon: Globe, color: "text-accent" },
+        { label: "Skills Impacted", value: "1000+", icon: Users, color: "text-primary" },
     ];
 
     return (
         <SectionWrapper id="about">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="space-y-6">
-                    <h2 className="text-sm font-bold tracking-widest text-accent uppercase">About Lakana Enterprises</h2>
-                    <h3 className="text-4xl md:text-5xl font-extrabold leading-tight text-primary">
-                        A Diversified Organization <br /> Driven by Excellence
-                    </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed">
-                        Lakana Enterprises is a premier MSME organization in India, uniquely positioned at the intersection of human capital development and global trade. We believe in empowering the Indian workforce with world-class skills while simultaneously delivering high-quality Indian products to the international market.
-                    </p>
-                    <p className="text-gray-600 text-lg leading-relaxed">
-                        Aligned with government initiatives (TNSDC, TAHDCO) and certified under ISO 9001:2015, we operate with maximum transparency, credibility, and trust. Whether it's through CSR programs or international exports, we maintain the highest standards of professional integrity.
-                    </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div className="space-y-10">
+                    <div className="space-y-4">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="h-1 w-20 bg-accent rounded-full"
+                        />
+                        <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase">Institutional Legacy</h2>
+                        <h3 className="text-4xl md:text-6xl font-black leading-[1.1] text-primary tracking-tighter">
+                            Bridging Excellence <br /> Across <span className="text-accent">Continents.</span>
+                        </h3>
+                    </div>
 
-                    <div className="grid grid-cols-2 gap-6 pt-6">
+                    <div className="space-y-6">
+                        <p className="text-gray-500 text-xl font-medium leading-relaxed">
+                            Lakana Enterprises stands as a beacon of Indian MSME innovation. Strategically positioned at the nexus of human capital expansion and high-velocity trade.
+                        </p>
+                        <div className="space-y-4">
+                            {[
+                                "ISO 9001:2015 Quality Management Systems",
+                                "Official Government Alignment (TNSDC & TAHDCO)",
+                                "MSME UDYAM Registered Professional Entity"
+                            ].map((text, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: i * 0.1 }}
+                                    className="flex items-center gap-3"
+                                >
+                                    <CheckCircle2 className="text-accent" size={20} strokeWidth={3} />
+                                    <span className="font-bold text-primary/80">{text}</span>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-6 pt-10">
                         {stats.map((stat, idx) => (
-                            <div key={idx} className="p-4 border border-silver/30 rounded-xl bg-white/50">
-                                <stat.icon className="text-accent mb-2" size={24} />
-                                <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                                <div className="text-xs text-gray-500 font-medium uppercase tracking-wider">{stat.label}</div>
-                            </div>
+                            <motion.div
+                                key={idx}
+                                whileHover={{ y: -5 }}
+                                className="p-8 border border-silver/20 rounded-[2rem] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.03)] group transition-all duration-300"
+                            >
+                                <stat.icon className={`${stat.color} mb-4 group-hover:scale-110 transition-transform duration-300`} size={32} />
+                                <div className="text-3xl font-black text-primary mb-1 tracking-tight">{stat.value}</div>
+                                <div className="text-[10px] text-gray-400 font-extrabold uppercase tracking-widest">{stat.label}</div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
-                <div className="relative">
-                    <div className="aspect-square bg-navy-gradient rounded-3xl overflow-hidden relative shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1000" alt="Corporate Growth" className="w-full h-full object-cover opacity-60" />
-                        <div className="absolute inset-0 bg-primary/20" />
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-white/20 rounded-2xl rotate-6" />
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-accent/30 rounded-2xl -rotate-3" />
+
+                <div className="relative lg:pl-10">
+                    {/* Decorative elements */}
+                    <div className="absolute top-[-10%] right-[-10%] w-64 h-64 bg-accent/5 rounded-full blur-3xl -z-10" />
+                    <div className="absolute bottom-[-10%] left-[-10%] w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
+
+                    <div className="aspect-[4/5] bg-navy-gradient rounded-[3rem] overflow-hidden relative shadow-[0_50px_100px_rgba(30,42,90,0.2)]">
+                        <img
+                            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000"
+                            alt="Corporate Architecture"
+                            className="w-full h-full object-cover opacity-70 transition-transform duration-1000 hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+
+                        <div className="absolute bottom-10 left-10 right-10 p-8 glass-dark rounded-[2rem] border-white/10">
+                            <p className="text-white font-bold leading-snug text-lg">
+                                "Elevating India's export capability through rigorous skill development and international quality standards."
+                            </p>
+                            <div className="mt-4 flex items-center gap-3">
+                                <div className="w-10 h-1 bg-accent rounded-full" />
+                                <span className="text-accent text-xs font-black uppercase tracking-widest">Global Philosophy</span>
+                            </div>
+                        </div>
                     </div>
+
                     <motion.div
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ repeat: Infinity, duration: 4 }}
-                        className="absolute -bottom-10 -left-10 bg-white p-6 shadow-2xl rounded-2xl border border-silver/20 hidden md:block"
+                        animate={{ y: [0, -20, 0], rotate: [0, 2, 0] }}
+                        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                        className="absolute -bottom-10 -left-10 bg-white p-10 shadow-[0_30px_60px_rgba(0,0,0,0.1)] rounded-[2.5rem] border border-silver/20 hidden xl:block"
                     >
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white">
-                                <CheckCircle2 size={24} />
+                        <div className="flex items-center gap-6">
+                            <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center text-white shadow-xl shadow-accent/40">
+                                <TrendingUp size={32} />
                             </div>
                             <div>
-                                <div className="font-bold text-primary">MSME Registered</div>
-                                <div className="text-xs text-gray-500">UDYAM-TN-02-005XXXX</div>
+                                <div className="font-black text-2xl text-primary leading-none">100%</div>
+                                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1">Audit Compliance</div>
                             </div>
                         </div>
                     </motion.div>

@@ -1,82 +1,95 @@
 'use client';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Clock, ShieldCheck } from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
+import { motion } from 'framer-motion';
 
 const ContactSection = () => {
     return (
-        <SectionWrapper id="contact" className="bg-silver/10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div className="space-y-8">
-                    <h2 className="text-4xl font-extrabold text-primary">Get in Touch</h2>
-                    <p className="text-gray-600 text-lg">
-                        Have a query about our skill programs or interested in our export products? Our team is ready to assist you.
-                    </p>
-
-                    <div className="space-y-6">
-                        <div className="flex gap-4 items-start">
-                            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white shrink-0"><MapPin size={24} /></div>
-                            <div>
-                                <h5 className="font-bold text-primary">Office Address</h5>
-                                <p className="text-gray-500">19/10, Ramappa Nagar Main Road, Perungudi, Chennai – 600096, Tamil Nadu, India</p>
-                            </div>
-                        </div>
-                        <div className="flex gap-4 items-start">
-                            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white shrink-0"><Phone size={24} /></div>
-                            <div>
-                                <h5 className="font-bold text-primary">Call Us</h5>
-                                <p className="text-gray-500">004-46494597 / +91 96297 72243</p>
-                            </div>
-                        </div>
-                        <div className="flex gap-4 items-start">
-                            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white shrink-0"><Mail size={24} /></div>
-                            <div>
-                                <h5 className="font-bold text-primary">Email</h5>
-                                <p className="text-gray-500">info@lakanaenterprises.com</p>
-                            </div>
-                        </div>
+        <SectionWrapper id="contact" className="bg-silver/10 relative">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 relative z-10">
+                <div className="space-y-12">
+                    <div className="space-y-4">
+                        <h2 className="text-sm font-black tracking-[0.4em] text-accent uppercase">Global Inquiries</h2>
+                        <h3 className="text-4xl md:text-6xl font-black text-primary tracking-tighter leading-none">
+                            Start a <br /><span className="text-accent underline decoration-accent/20 underline-offset-[12px]">Conversation.</span>
+                        </h3>
                     </div>
 
-                    <div className="w-full h-64 rounded-3xl overflow-hidden shadow-inner border border-silver/30 grayscale contrast-125 opacity-70">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9623864149!2d80.240!3d12.964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU3JzUwLjQiTiA4MMKwMTQnMjQuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                        />
+                    <p className="text-gray-500 text-xl font-medium leading-relaxed max-w-lg">
+                        Whether you're looking for export quotations or professional skill training, our specialized team is ready to respond.
+                    </p>
+
+                    <div className="space-y-10">
+                        {[
+                            { icon: MapPin, title: "Operations Hub", val: "19/10, Ramappa Nagar Main Road, Perungudi, Chennai – 600096, TN, India" },
+                            { icon: Phone, title: "Institutional Support", val: "+91 96297 72243 / 004-46494597" },
+                            { icon: Mail, title: "General Inquiries", val: "info@lakanaenterprises.com" },
+                        ].map((item, idx) => (
+                            <motion.div
+                                key={idx}
+                                whileHover={{ x: 10 }}
+                                className="flex gap-6 group"
+                            >
+                                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary shadow-lg group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
+                                    <item.icon size={24} strokeWidth={1.5} />
+                                </div>
+                                <div>
+                                    <h5 className="font-extrabold text-gray-400 uppercase tracking-widest text-[10px] mb-1">{item.title}</h5>
+                                    <p className="text-primary font-bold text-lg leading-tight lg:max-w-xs">{item.val}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    <div className="p-8 bg-primary/5 rounded-[2.5rem] border border-primary/5 flex items-center gap-6">
+                        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-accent"><Clock size={24} /></div>
+                        <div className="flex-1">
+                            <p className="font-black text-primary text-sm">24H Response Guarantee</p>
+                            <p className="text-xs text-gray-500 font-medium">We prioritize official institutional requests within one business day.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div className="bg-white p-10 lg:p-14 rounded-3xl shadow-2xl border border-white">
-                    <form className="space-y-6">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div className="space-y-2">
-                                <label className="text-sm font-bold text-primary">Full Name</label>
-                                <input type="text" className="w-full px-4 py-3 rounded-xl bg-silver/5 border border-silver/20 focus:outline-none focus:border-accent" placeholder="John Doe" />
+                <div className="relative">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        className="bg-white p-10 lg:p-16 rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.06)] border border-white relative z-10"
+                    >
+                        <form className="space-y-8">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                                <div className="space-y-3">
+                                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 ml-2">Your Full Name</label>
+                                    <input type="text" className="w-full px-6 py-4 rounded-2xl bg-silver/5 border border-silver/10 focus:outline-none focus:border-accent transition-all font-bold placeholder:text-gray-300" placeholder="E.g. J. Smith" />
+                                </div>
+                                <div className="space-y-3">
+                                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 ml-2">Email Address</label>
+                                    <input type="email" className="w-full px-6 py-4 rounded-2xl bg-silver/5 border border-silver/10 focus:outline-none focus:border-accent transition-all font-bold placeholder:text-gray-300" placeholder="smith@company.com" />
+                                </div>
                             </div>
-                            <div className="space-y-2">
-                                <label className="text-sm font-bold text-primary">Email Address</label>
-                                <input type="email" className="w-full px-4 py-3 rounded-xl bg-silver/5 border border-silver/20 focus:outline-none focus:border-accent" placeholder="john@example.com" />
+
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 ml-2">Service Department</label>
+                                <select className="w-full px-6 py-4 rounded-2xl bg-silver/5 border border-silver/10 focus:outline-none focus:border-accent transition-all font-bold text-primaryAppearance-none">
+                                    <option>Skill Development & Training</option>
+                                    <option>Exports & Trade Logistics</option>
+                                    <option>CSR & Govt. Partnership</option>
+                                    <option>General Corporate Inquiry</option>
+                                </select>
                             </div>
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-bold text-primary">Subject</label>
-                            <select className="w-full px-4 py-3 rounded-xl bg-silver/5 border border-silver/20 focus:outline-none focus:border-accent">
-                                <option>Skill Development Inquiry</option>
-                                <option>Export Quotation</option>
-                                <option>CSR Partnership</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-bold text-primary">Message</label>
-                            <textarea rows="5" className="w-full px-4 py-3 rounded-xl bg-silver/5 border border-silver/20 focus:outline-none focus:border-accent" placeholder="How can we help you?"></textarea>
-                        </div>
-                        <button className="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 hover:bg-secondary transition-all active:scale-[0.98] btn-glow">
-                            Send Message
-                        </button>
-                    </form>
+
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-black uppercase tracking-widest text-primary/50 ml-2">Detailed Message</label>
+                                <textarea rows="5" className="w-full px-6 py-4 rounded-2xl bg-silver/5 border border-silver/10 focus:outline-none focus:border-accent transition-all font-bold placeholder:text-gray-300 resize-none" placeholder="Describe your requirement..."></textarea>
+                            </div>
+
+                            <button className="w-full bg-primary text-white font-black py-6 rounded-2xl shadow-2xl shadow-primary/30 hover:bg-accent transition-all active:scale-[0.98] btn-glow flex items-center justify-center gap-3 tracking-widest uppercase text-sm">
+                                TRANSMIT INQUIRY <Send size={20} />
+                            </button>
+                        </form>
+                    </motion.div>
+
+                    <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-accent/10 rounded-full blur-[100px] -z-10" />
                 </div>
             </div>
         </SectionWrapper>
