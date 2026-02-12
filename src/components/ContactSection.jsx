@@ -22,7 +22,7 @@ const ContactSection = () => {
                     <div className="space-y-10">
                         {[
                             { icon: MapPin, title: "Operations Hub", val: "19/10, Ramappa Nagar Main Road, Perungudi, Chennai – 600096, TN, India" },
-                            { icon: Phone, title: "Institutional Support", val: "+91 96297 72243 / 004-46494597" },
+                            { icon: Phone, title: "Institutional Support", val: "+91 96297 72243 / 044-46194597" },
                             { icon: Mail, title: "General Inquiries", val: "info@lakanaenterprises.com" },
                         ].map((item, idx) => (
                             <motion.div

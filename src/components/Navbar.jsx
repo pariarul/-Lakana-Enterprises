@@ -55,13 +55,13 @@ const Navbar = () => {
                     <Link href="/" className="flex items-center gap-3 group relative z-[101]">
                         <motion.div
                             whileHover={{ rotate: [0, -10, 10, 0] }}
-                            className="w-12 h-15 flex items-center justify-center"
+                            className="w-20 h-20 flex items-center justify-center"
                         >
                             <Image
                                 src="/logo.png"   // put logo in /public folder
                                 alt="Lakana Enterprises Logo"
-                                width={100}
-                                height={100}
+                                width={80}
+                                height={80}
                                 className="object-contain"
                                 priority
                             />

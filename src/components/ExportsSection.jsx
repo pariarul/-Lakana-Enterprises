@@ -5,10 +5,11 @@ import { motion } from 'framer-motion';
 
 const ExportsSection = () => {
     const exportProducts = [
-        { title: "Global Textiles", icon: Shirt, description: "Premium Cotton, Linen, and Sweaters crafted with Indian craftsmanship and modern aesthetics." },
-        { title: "Authentic Spices", icon: ShoppingBag, description: "Pure Whole & Ground spices exported globally under the most stringent quality protocols." },
-        { title: "Sustainable Palm", icon: Globe, description: "Eco-friendly products derived from native palm varieties, supporting local sustainability." },
-        { title: "Quality Foodstuffs", icon: Utensils, description: "Grade-A processed and raw food items optimized for long-distance international transit." },
+        { title: "Coconut Palm Sugar", icon: Utensils, description: "Pure, organic Coconut Palm Sugar powder crafted for the health-conscious global market." },
+        { title: "Organic Palm Crystals", icon: ShoppingBag, description: "Exquisite Palm Sugar crystals exported globally under the most stringent quality protocols." },
+        { title: "Palmyra Jaggery", icon: Globe, description: "Traditional Palmyra Palm Jaggery blocks, a nutrient-rich natural sweetener." },
+        { title: "Palm Sugar Syrup", icon: Globe, description: "Premium liquid Palm Sugar syrup, optimized for international culinary transit." },
+        { title: "Bamboo Products", icon: Globe, description: "Eco-friendly, sustainable Bamboo products supporting local artisanal craftsmanship." },
     ];
 
     return (
@@ -80,7 +81,7 @@ const ExportsSection = () => {
                 <div className="absolute top-0 right-0 p-8 text-white/5 pointer-events-none"><Globe size={120} /></div>
                 <h4 className="text-2xl font-black mb-8 text-center text-silver">Specialized Export Portfolio</h4>
                 <div className="flex flex-wrap justify-center gap-5">
-                    {['Premium Cotton', 'Pure Linen', 'Cashmere Sweaters', 'Kashmiri Spices', 'Organic Ground Spices', 'Palm Artisanal Crafts'].map((tag, i) => (
+                    {['Palm Sugar Powder', 'Sugar Crystals', 'Palm Jaggery', 'Palm Syrup', 'Bamboo Crafts', 'Sustainable Trade'].map((tag, i) => (
                         <motion.span
                             key={i}
                             whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}

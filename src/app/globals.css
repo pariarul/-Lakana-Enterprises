@@ -4,7 +4,7 @@
   --color-primary: #1E2A5A;
   --color-secondary: #243A7A;
   --color-silver: #C9CED6;
-  --color-accent: #3FA9F5;
+  --color-accent: #00CED1;
   --color-soft-white: #F8FAFC;
 
   --color-background: var(--soft-white);
@@ -41,7 +41,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #1E2A5A 0%, #3FA9F5 100%);
+  background: linear-gradient(135deg, #1E2A5A 0%, #00CED1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3FA9F5;
+  background: #00CED1;
 }
 
 /* Extra Animations */

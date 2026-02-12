@@ -111,7 +111,7 @@ export default function Footer() {
                             <li className="flex gap-3">
                                 <Phone className="text-accent shrink-0" size={18} />
                                 <span>
-                                    004-46494597<br />
+                                    044-46194597<br />
                                     +91 96297 72243
                                 </span>
                             </li>

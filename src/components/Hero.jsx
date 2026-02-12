@@ -62,7 +62,7 @@ const Hero = () => {
                 >
                     Empowering <span className="text-accent">Skills</span> <br className="hidden md:block" />
                     Enabling <span className="text-silver">Trade</span> <br className="hidden md:block" />
-                    Building <span className="relative inline-block">
+                    Building <span>
                         Global Trust
                         <motion.div
                             initial={{ width: 0 }}
