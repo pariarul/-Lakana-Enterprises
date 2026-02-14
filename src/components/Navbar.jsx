@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from "next/image";
 
+
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(true);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -90,12 +91,14 @@ const Navbar = () => {
                                 </Link>
                             ))}
                         </div>
-                        <Link
-                            href="/contact"
-                            className="bg-accent text-white px-8 py-3 rounded-full text-sm font-black shadow-lg shadow-accent/20 hover:bg-secondary hover:shadow-secondary/30 transition-all active:scale-95 btn-glow flex items-center gap-2"
-                        >
-                            INQUIRE NOW <ChevronRight size={16} />
-                        </Link>
+   <Link
+      href="https://wa.me/919629772243"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-accent text-white px-8 py-3 rounded-full text-sm font-black shadow-lg shadow-accent/20 hover:bg-secondary hover:shadow-secondary/30 transition-all active:scale-95 btn-glow flex items-center gap-2"
+    >
+      INQUIRE NOW <ChevronRight size={16} />
+    </Link>
                     </div>
 
                     {/* Mobile Toggle */}

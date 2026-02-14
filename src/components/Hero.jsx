@@ -87,7 +87,10 @@ const Hero = () => {
                     <Link href="/skill-development" className="group bg-white text-primary px-10 py-5 rounded-2xl font-black text-lg hover:bg-accent hover:text-white transition-all shadow-2xl shadow-black/40 flex items-center gap-3 active:scale-95 btn-glow">
                         EXPLORE SERVICES <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                     </Link>
-                    <Link href="/contact" className="bg-white/5 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/10 transition-all flex items-center gap-3 active:scale-95">
+                    <Link       href="https://wa.me/919629772243"
+      target="_blank"
+      rel="noopener noreferrer"
+       className="bg-white/5 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/10 transition-all flex items-center gap-3 active:scale-95">
                         GET IN TOUCH
                     </Link>
                 </motion.div>

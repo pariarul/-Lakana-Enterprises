@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import WhatsAppChat from "@/components/WhatsAppChat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -90,7 +91,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} font-sans antialiased text-primary bg-background`}
       >
+       
         {children}
+         <WhatsAppChat />
       </body>
     </html>
   );
