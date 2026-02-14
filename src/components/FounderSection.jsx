@@ -17,7 +17,7 @@ const FounderSection = () => {
                             className="aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl relative z-10 border-[12px] border-soft-white"
                         >
                             <img
-                                src="/vj.jpg"   // put founder image in /public folder
+                                src="/founder.jpg"    // put founder image in /public folder
                                 alt="J. Arivarasan Vijay"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
